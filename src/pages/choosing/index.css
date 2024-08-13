@@ -1,0 +1,192 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* 占据整个视口高度 */
+  font-family: 'Arial', sans-serif;
+  font-weight: bolder;
+}
+
+/* Header 样式 */
+.header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #ffffff, #fcfcfc);
+  border-bottom: 2px solid #ddd;
+}
+
+/* 选择桌号文本 */
+.selected-count {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-right: auto; /* 将选中的桌号推到左侧 */
+}
+
+/* Right section to contain picker and image */
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* 保持picker和image之间的间距 */
+}
+
+/* Picker 样式 */
+.picker {
+  font-size: 28px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 0.5px solid #6d2fff;
+  color: #6d2fff;
+  margin-right: 0; /* 移除picker和image之间的间距 */
+}
+
+/* Header image style */
+.header-image {
+  width: 60px;
+  height: 60px;
+  /* 移除margin-left，因为我们希望图片和选择器紧密排列 */
+}
+
+/* 状态提示容器 */
+.status-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  gap: 50px;
+}
+
+/* 单个状态项 */
+.status-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 状态图片 */
+.status-image {
+  width: 100px; /* 状态图片的宽度 */
+  height: 100px; /* 状态图片的高度 */
+  /* border-radius: 50%; 
+  border: 0.5px solid #6d2fff; */
+  background-color: #fff; /* 背景颜色 */
+}
+
+/* 状态文本 */
+.status-text {
+  font-size: 18px; /* 状态文本的字体大小 */
+  margin-top: 5px;
+  color: #333; /* 文本颜色 */
+}
+
+/* 主内容区域 */
+.main-content {
+  display: flex;
+  flex: 1;
+  position: relative;
+  padding: 20px; /* 确保内容区域内边距 */
+  box-sizing: border-box;
+  overflow-y: auto; /* 启用垂直滚动条 */
+}
+
+/* 左侧区域，占据页面的左侧 */
+.left-side {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  gap: 10px; /* 左侧两列之间的间距 */
+  flex: 1;
+}
+
+/* 左侧的列容器 */
+.left-column {
+  display: flex;
+  flex-direction: column; /* 竖向排列 */
+  flex: 1; /* 每列占据可用空间的一半 */
+  padding: 0; /* 清除默认内边距 */
+  margin-bottom: 10px; /* 调整每排之间的间距 */
+}
+
+/* 每排桌子的样式 */
+.left-column {
+  display: flex;
+  justify-content: space-between; /* 每排四张桌子 */
+  margin-bottom: 10px; /* 调整每排之间的间距 */
+}
+
+/* 单个座位的样式 */
+.seat {
+  width: 80px; /* 座位图标的宽度 */
+  height: 80px; /* 座位图标的高度 */
+  cursor: pointer;
+  transition: transform 0.2s ease; /* 动画效果 */
+}
+
+/* 鼠标悬停效果 */
+.seat:hover {
+  transform: scale(1.05); /* 放大效果 */
+}
+
+.seat-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 20px; /* 行间距 */
+}
+
+/* 座位编号 */
+.seat-number {
+  font-size: 20px;
+  margin-top: 5px;
+  color: #333; /* 文本颜色 */
+  font-weight: bold; /* 加粗字体 */
+}
+
+/* 右侧区域，占据页面的右下方区域 */
+.right-side {
+  display: flex;
+  flex-direction: column-reverse; /* 列排列方式 */
+  padding: 20px;
+  box-sizing: border-box;
+  margin-left: 20px; /* 左侧区域和右侧区域之间的间距 */
+  width: 50%; /* 占据页面宽度的 50% */
+  height: calc(100vh - 120px - 40px); /* 减去header、status-container和padding的高度 */
+  overflow-y: auto; /* 启用垂直滚动条 */
+}
+
+/* 右侧区域中的每一行 */
+.right-row {
+  display: flex;
+  justify-content: space-between; /* 每排四张桌子 */
+  margin-bottom: 15px; /* 行间距 */
+}
+
+/* 右侧区域中的座位 */
+.right-row .seat-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.confirm-button-wrapper {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+  padding: 8px;
+ 
+  z-index: 10; /* 确保按钮在最上层 */
+}
+
+.confirm-button {
+  width: 50%;
+  background: #fff;
+  font-size: 28px;
+  padding:8px;
+  border-radius: 8px;
+  border: 1px solid #6d2fff;
+  color: rgb(109, 47, 255);
+  cursor: pointer;
+}
